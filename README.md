@@ -5,7 +5,7 @@
 <p>A visual drag-and-drop chatbot flow builder. Design conversation flows by connecting message nodes — no code required.</p>
 
 <p>
-  <a href="https://your-live-demo-url.vercel.app" target="_blank"><strong>View Live Demo »</strong></a>
+  <a href="https://chat-flow-iota-ivory.vercel.app" target="_blank"><strong>View Live Demo »</strong></a>
 </p>
 
 <p>
