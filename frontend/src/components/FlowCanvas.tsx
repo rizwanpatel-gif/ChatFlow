@@ -19,6 +19,8 @@ import NodesPanel from './NodesPanel'
 import SettingsPanel from './SettingsPanel'
 import axios from 'axios'
 
+const API_BASE = import.meta.env.VITE_API_URL ?? ''
+
 const nodeTypes: NodeTypes = {
   textNode: TextNode,
 }
@@ -124,10 +126,10 @@ const FlowCanvas = () => {
     try {
       let response
       if (savedFlowId.current === null) {
-        response = await axios.post<SavedFlow>('/api/flows', { name: 'My Flow', nodes, edges })
+        response = await axios.post<SavedFlow>(`${API_BASE}/api/flows`, { name: 'My Flow', nodes, edges })
         savedFlowId.current = response.data.id
       } else {
-        response = await axios.put<SavedFlow>(`/api/flows/${savedFlowId.current}`, {
+        response = await axios.put<SavedFlow>(`${API_BASE}/api/flows/${savedFlowId.current}`, {
           name: 'My Flow',
           nodes,
           edges,
